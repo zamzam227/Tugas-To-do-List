@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List Interaktif</title>
+    <link rel="icon" href="images/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <main class="todo">
+        <!-- HEADER -->
+        <header class="todo-header">
+          <img src="images/icon.png" alt="" class="todo-icon" />
+          <div>
+            <h1 id="judul-utama">My To-Do List</h1>
+            <p id="sub-judul">Catat tugasmu, centang kalau sudah selesai.</p>
+          </div>
+        </header>
+
+        <!-- REKAP STATISTIK (Fitur 5) -->
+        <section class="stats" aria-label="Rekap tugas">
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="stat-angka" id="stat-total">0</span>
+              <span class="stat-label">Total tugas</span>
+            </div>
+            <div class="stat stat-selesai">
+              <span class="stat-angka" id="stat-selesai">0</span>
+              <span class="stat-label">Selesai</span>
+            </div>
+            <div class="stat">
+              <span class="stat-angka" id="stat-belum">0</span>
+              <span class="stat-label">Belum selesai</span>
+            </div>
+          </div>
+          <div
+            class="progres"
+            role="progressbar"
+            aria-label="Persentase tugas selesai"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            id="track-progres"
+          >
+            <div class="progres-bar" id="bar-progres"></div>
+          </div>
+        </section>
+
+        <!-- INPUT TUGAS (Fitur 1 & 2) -->
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="input-tugas"
+            placeholder="Tulis tugas baru..."
+            autocomplete="off"
+            aria-label="Tugas baru"
+            aria-describedby="pesan-peringatan"
+          />
+          <button id="btn-tambah" class="btn-tambah">+ Tambah</button>
+        </div>
+        <p id="pesan-peringatan" class="peringatan hidden" role="alert"></p>
+
+        <!-- DAFTAR TUGAS (Fitur 3 & 4) -->
+        <ul id="daftar-tugas" class="daftar-tugas">
+          <!-- Elemen <li> ditambahkan secara dinamis lewat JavaScript -->
+        </ul>
+        <p id="pesan-kosong" class="empty-state">
+          Belum ada tugas. Ketik satu di kolom atas untuk memulai.
+        </p>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
